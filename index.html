@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Presentation</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .slide {
+            width: 100vw;
+            height: 100vh;
+
+            display: none;
+
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 60px;
+        }
+
+        .slide.active {
+            display: flex;
+        }
+
+        h1 {
+            font-size: 70px;
+            margin-bottom: 25px;
+        }
+
+        p {
+            font-size: 28px;
+        }
+
+        .slide1 {
+            background: #111827;
+            color: white;
+        }
+
+        .slide2 {
+            background: #f3f4f6;
+            color: #111827;
+        }
+
+        .slide3 {
+            background: #2563eb;
+            color: white;
+        }
+
+        .content {
+            max-width: 1000px;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- SLIDE 1 -->
+
+    <section class="slide slide1 active">
+
+        <div class="content">
+
+            <h1>My AI Presentation</h1>
+
+            <p>
+                Building the future with Artificial Intelligence
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SLIDE 2 -->
+
+    <section class="slide slide2">
+
+        <div class="content">
+
+            <h1>The Problem</h1>
+
+            <p>
+                Organizations face many challenges
+                that can be improved using AI.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SLIDE 3 -->
+
+    <section class="slide slide3">
+
+        <div class="content">
+
+            <h1>The Solution</h1>
+
+            <p>
+                An intelligent digital experience
+                powered by AI.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+<script>
+
+    let currentSlide = 0;
+
+    const slides = document.querySelectorAll(".slide");
+
+
+    function showSlide(index) {
+
+        slides.forEach(slide => {
+
+            slide.classList.remove("active");
+
+        });
+
+        slides[index].classList.add("active");
+
+    }
+
+
+    document.addEventListener("keydown", function(event) {
+
+        if (event.key === "ArrowRight") {
+
+            currentSlide++;
+
+            if (currentSlide >= slides.length) {
+                currentSlide = slides.length - 1;
+            }
+
+            showSlide(currentSlide);
+
+        }
+
+
+        if (event.key === "ArrowLeft") {
+
+            currentSlide--;
+
+            if (currentSlide < 0) {
+                currentSlide = 0;
+            }
+
+            showSlide(currentSlide);
+
+        }
+
+    });
+
+</script>
+
+
+</body>
+
+</html>
