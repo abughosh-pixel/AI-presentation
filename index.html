@@ -2,185 +2,1562 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My Presentation</title>
+<meta charset="UTF-8">
 
-    <style>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<title>Fine | AI Learning Bites 2026</title>
 
-        body {
-            font-family: Arial, sans-serif;
-            overflow: hidden;
-        }
-
-        .slide {
-            width: 100vw;
-            height: 100vh;
-
-            display: none;
-
-            align-items: center;
-            justify-content: center;
-
-            text-align: center;
-
-            padding: 60px;
-        }
-
-        .slide.active {
-            display: flex;
-        }
-
-        h1 {
-            font-size: 70px;
-            margin-bottom: 25px;
-        }
-
-        p {
-            font-size: 28px;
-        }
-
-        .slide1 {
-            background: #111827;
-            color: white;
-        }
-
-        .slide2 {
-            background: #f3f4f6;
-            color: #111827;
-        }
-
-        .slide3 {
-            background: #2563eb;
-            color: white;
-        }
-
-        .content {
-            max-width: 1000px;
-        }
-
-    </style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
-
 <body>
 
+<div class="grain"></div>
 
-    <!-- SLIDE 1 -->
+<div class="topline"></div>
 
-    <section class="slide slide1 active">
 
-        <div class="content">
+<!-- HEADER -->
 
-            <h1>My AI Presentation</h1>
+<header class="header">
 
-            <p>
-                Building the future with Artificial Intelligence
-            </p>
+    <div class="brand">
 
+        <div class="brand-symbol">
+            F
         </div>
 
-    </section>
-
-
-
-    <!-- SLIDE 2 -->
-
-    <section class="slide slide2">
-
-        <div class="content">
-
-            <h1>The Problem</h1>
-
-            <p>
-                Organizations face many challenges
-                that can be improved using AI.
-            </p>
-
+        <div>
+            <strong>fine</strong>
+            <span>hygienic holding</span>
         </div>
 
-    </section>
+    </div>
+
+
+    <div class="header-center">
+
+        AI LEARNING BITES
+        <b>2026</b>
+
+    </div>
+
+
+    <button
+        class="outline-btn"
+        id="overviewBtn">
+
+        MENU ☰
+
+    </button>
+
+</header>
 
 
 
-    <!-- SLIDE 3 -->
+<!-- SIDE NAVIGATION -->
 
-    <section class="slide slide3">
+<nav class="rail">
 
-        <div class="content">
+<button class="rail-dot active" data-slide="0">
+01
+</button>
 
-            <h1>The Solution</h1>
+<button class="rail-dot" data-slide="1">
+02
+</button>
 
-            <p>
-                An intelligent digital experience
-                powered by AI.
-            </p>
+<button class="rail-dot" data-slide="2">
+03
+</button>
 
-        </div>
+<button class="rail-dot" data-slide="3">
+04
+</button>
 
-    </section>
+<button class="rail-dot" data-slide="4">
+05
+</button>
 
+<button class="rail-dot" data-slide="5">
+06
+</button>
 
+<button class="rail-dot" data-slide="6">
+07
+</button>
 
-<script>
+<button class="rail-dot" data-slide="7">
+08
+</button>
 
-    let currentSlide = 0;
+<button class="rail-dot" data-slide="8">
+09
+</button>
 
-    const slides = document.querySelectorAll(".slide");
+<button class="rail-dot" data-slide="9">
+10
+</button>
 
+<button class="rail-dot" data-slide="10">
+11
+</button>
 
-    function showSlide(index) {
+<button class="rail-dot" data-slide="11">
+12
+</button>
 
-        slides.forEach(slide => {
-
-            slide.classList.remove("active");
-
-        });
-
-        slides[index].classList.add("active");
-
-    }
-
-
-    document.addEventListener("keydown", function(event) {
-
-        if (event.key === "ArrowRight") {
-
-            currentSlide++;
-
-            if (currentSlide >= slides.length) {
-                currentSlide = slides.length - 1;
-            }
-
-            showSlide(currentSlide);
-
-        }
+</nav>
 
 
-        if (event.key === "ArrowLeft") {
 
-            currentSlide--;
+<main id="deck">
 
-            if (currentSlide < 0) {
-                currentSlide = 0;
-            }
 
-            showSlide(currentSlide);
+<!-- ========================= -->
+<!-- SLIDE 1 -->
+<!-- ========================= -->
 
-        }
+<section class="slide active hero">
 
-    });
+<div class="hero-copy">
 
-</script>
+<p class="eyebrow">
+FINE · PEOPLE & CULTURE · 2026
+</p>
 
+
+<h1>
+
+AI
+
+<br>
+
+<span>LEARNING</span>
+
+<br>
+
+BITES
+
+</h1>
+
+
+<p class="hero-lead">
+
+From learning about AI
+<br>
+
+to building with AI.
+
+</p>
+
+
+<button
+class="primary"
+data-next>
+
+ENTER THE JOURNEY
+<b>→</b>
+
+</button>
+
+</div>
+
+
+
+<div class="hero-art">
+
+<div class="ring r1"></div>
+
+<div class="ring r2"></div>
+
+<div class="ring r3"></div>
+
+
+<div class="core">
+
+AI
+
+</div>
+
+
+<div class="orb-label l1">
+LEARN
+</div>
+
+<div class="orb-label l2">
+EXPLORE
+</div>
+
+<div class="orb-label l3">
+APPLY
+</div>
+
+<div class="orb-label l4">
+BUILD
+</div>
+
+</div>
+
+
+
+<div class="hero-meta">
+
+<span>
+JANUARY — JULY
+</span>
+
+<b>
+10 LEARNING BITES
+</b>
+
+<span>
+FINE HYGIENIC HOLDING
+</span>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- SLIDE 2 -->
+<!-- ========================= -->
+
+<section class="slide light">
+
+<div class="content split">
+
+<div>
+
+<p class="eyebrow">
+02 · WHY AI
+</p>
+
+
+<h2>
+
+AI has become a
+<br>
+
+<span>priority</span>
+at Fine.
+
+</h2>
+
+
+<p class="lead">
+
+We have given Artificial Intelligence
+huge importance because we believe
+it can help us work smarter, save time
+and create new ways of working.
+
+</p>
+
+
+<div class="quote">
+
+“The goal was not simply to talk
+about AI — it was to help our people
+experience it.”
+
+</div>
+
+</div>
+
+
+
+<div class="impact-grid">
+
+<article>
+
+<span>01</span>
+
+<b>
+Work smarter
+</b>
+
+<small>
+Support everyday work with AI.
+</small>
+
+</article>
+
+
+<article>
+
+<span>02</span>
+
+<b>
+Save time
+</b>
+
+<small>
+Reduce repetitive manual work.
+</small>
+
+</article>
+
+
+<article>
+
+<span>03</span>
+
+<b>
+Decide better
+</b>
+
+<small>
+Turn information into useful insights.
+</small>
+
+</article>
+
+
+<article>
+
+<span>04</span>
+
+<b>
+Create
+</b>
+
+<small>
+Explore new ideas and solutions.
+</small>
+
+</article>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- SLIDE 3 -->
+<!-- ========================= -->
+
+<section class="slide dark">
+
+<div class="content center">
+
+<p class="eyebrow cyan">
+
+03 · LEARNING FIRST
+
+</p>
+
+
+<h2>
+
+We started with
+<br>
+
+<span>learning.</span>
+
+</h2>
+
+
+<p class="lead light-text">
+
+A series of short, practical Learning
+Bites helped employees explore AI
+tools, technologies and applications.
+
+</p>
+
+
+<div class="learning-path">
+
+
+<div class="path-node">
+
+<strong>01</strong>
+
+<div class="icon">
+◌
+</div>
+
+<b>
+LEARN
+</b>
+
+<small>
+Build awareness
+</small>
+
+</div>
+
+
+<i>→</i>
+
+
+<div class="path-node">
+
+<strong>02</strong>
+
+<div class="icon">
+⌕
+</div>
+
+<b>
+EXPLORE
+</b>
+
+<small>
+Discover possibilities
+</small>
+
+</div>
+
+
+<i>→</i>
+
+
+<div class="path-node">
+
+<strong>03</strong>
+
+<div class="icon">
+✦
+</div>
+
+<b>
+APPLY
+</b>
+
+<small>
+Use AI at work
+</small>
+
+</div>
+
+
+<i>→</i>
+
+
+<div class="path-node featured">
+
+<strong>04</strong>
+
+<div class="icon">
+⌘
+</div>
+
+<b>
+BUILD
+</b>
+
+<small>
+Create solutions
+</small>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- SLIDE 4 -->
+<!-- ========================= -->
+
+<section class="slide light">
+
+<div class="content">
+
+<p class="eyebrow">
+04 · THE JOURNEY
+</p>
+
+
+<h2>
+
+10 Learning Bites.
+<br>
+
+<span>One AI journey.</span>
+
+</h2>
+
+
+<div class="journey">
+
+
+<div class="month">
+
+<div class="dot"></div>
+
+<h3>JAN</h3>
+
+<p>
+
+2 Learning Bites
+
+<br>
+
+AI in Excel
+
+<br>
+
+Introduction to Copilot
+
+</p>
+
+</div>
+
+
+<div class="month">
+
+<div class="dot"></div>
+
+<h3>MAR</h3>
+
+<p>
+
+1 Learning Bite
+
+<br>
+
+Copilot in Excel
+
+</p>
+
+</div>
+
+
+<div class="month">
+
+<div class="dot"></div>
+
+<h3>APR</h3>
+
+<p>
+
+1 Learning Bite
+
+<br>
+
+AI in PowerPoint
+
+</p>
+
+</div>
+
+
+<div class="month">
+
+<div class="dot"></div>
+
+<h3>MAY</h3>
+
+<p>
+
+2 Learning Bites
+
+<br>
+
+AI in Leadership
+
+<br>
+
+BRICKS AI
+
+</p>
+
+</div>
+
+
+<div class="month">
+
+<div class="dot"></div>
+
+<h3>JUN</h3>
+
+<p>
+
+3 Learning Bites
+
+<br>
+
+AI in Legal & Compliance
+
+<br>
+
+AI Agent 1
+
+<br>
+
+AI Agent 2
+
+</p>
+
+</div>
+
+
+<div class="month">
+
+<div class="dot"></div>
+
+<h3>JUL</h3>
+
+<p>
+
+1 Learning Bite
+
+<br>
+
+AI Agent 3
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- SLIDE 5 -->
+<!-- ========================= -->
+
+<section class="slide light">
+
+<div class="content">
+
+<p class="eyebrow">
+05 · THE SESSIONS
+</p>
+
+
+<h2>
+
+Explore the
+<span>
+Learning Bites.
+</span>
+
+</h2>
+
+
+<div
+class="session-grid"
+id="sessionGrid">
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- SLIDE 6 -->
+<!-- ========================= -->
+
+<section class="slide dark">
+
+<div class="content">
+
+<p class="eyebrow cyan">
+
+06 · EVERYDAY PRODUCTIVITY
+
+</p>
+
+
+<h2>
+
+We started with
+<br>
+
+<span>
+the tools we already use.
+</span>
+
+</h2>
+
+
+<p class="lead light-text">
+
+Excel, PowerPoint and Copilot
+made AI tangible in everyday work.
+
+</p>
+
+
+<div class="feature-posters">
+
+
+<button
+class="feature-poster"
+data-session="0">
+
+<img
+src="assets/ai-excel-january.jpg">
+
+<span>
+
+AI IN EXCEL
+
+<b>↗</b>
+
+</span>
+
+</button>
+
+
+
+<button
+class="feature-poster"
+data-session="1">
+
+<img
+src="assets/introduction-to-copilot-january.jpg">
+
+<span>
+
+INTRODUCTION TO COPILOT
+
+<b>↗</b>
+
+</span>
+
+</button>
+
+
+
+<button
+class="feature-poster"
+data-session="3">
+
+<img
+src="assets/ai-powerpoint-april.png">
+
+<span>
+
+AI IN POWERPOINT
+
+<b>↗</b>
+
+</span>
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- SLIDE 7 -->
+<!-- ========================= -->
+
+<section class="slide light">
+
+<div class="content">
+
+<p class="eyebrow">
+
+07 · BROADER APPLICATIONS
+
+</p>
+
+
+<h2>
+
+AI is not only about
+<br>
+
+<span>
+productivity.
+</span>
+
+</h2>
+
+
+<p class="lead">
+
+We expanded the conversation
+into leadership, finance,
+legal and compliance.
+
+</p>
+
+
+<div class="feature-posters light-posters">
+
+
+<button
+class="feature-poster"
+data-session="4">
+
+<img
+src="assets/ai-leadership.jpg">
+
+<span>
+
+AI IN LEADERSHIP
+
+<b>↗</b>
+
+</span>
+
+</button>
+
+
+<button
+class="feature-poster"
+data-session="5">
+
+<img
+src="assets/bricks-ai-may.jpg">
+
+<span>
+
+BRICKS AI
+
+<b>↗</b>
+
+</span>
+
+</button>
+
+
+<button
+class="feature-poster"
+data-session="6">
+
+<img
+src="assets/ai-legal-compliance-june.jpg">
+
+<span>
+
+LEGAL & COMPLIANCE
+
+<b>↗</b>
+
+</span>
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- SLIDE 8 -->
+<!-- ========================= -->
+
+<section class="slide dark">
+
+<div class="content center">
+
+<p class="eyebrow cyan">
+
+08 · AI AGENTS
+
+</p>
+
+
+<h2>
+
+Then we asked a
+<br>
+
+<span>
+different question.
+</span>
+
+</h2>
+
+
+<div class="question">
+
+<div>
+
+“How can I
+<br>
+
+<b>
+USE AI?
+</b>
+
+”
+
+</div>
+
+
+<span>
+→
+</span>
+
+
+<div class="question-focus">
+
+“What can I
+<br>
+
+<b>
+BUILD WITH AI?
+</b>
+
+”
+
+</div>
+
+</div>
+
+
+<p class="lead light-text">
+
+The AI Agent Learning Bites
+introduced employees to building
+AI-powered solutions for specific
+tasks and real business needs.
+
+</p>
+
+
+<div class="pill-row">
+
+<span>
+AI AGENT 1
+</span>
+
+<span>
+AI AGENT 2
+</span>
+
+<span>
+AI AGENT 3
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- SLIDE 9 -->
+<!-- ========================= -->
+
+<section class="slide dark">
+
+<div class="content center">
+
+<p class="eyebrow cyan">
+
+09 · FROM LEARNING TO ACTION
+
+</p>
+
+
+<h2>
+
+The learning didn't stop
+<br>
+
+at the
+<span>
+Learning Bite.
+</span>
+
+</h2>
+
+
+<div class="action-path">
+
+<div>
+
+<b>
+LEARNING
+</b>
+
+<small>
+Knowledge
+</small>
+
+</div>
+
+
+<i>
+→
+</i>
+
+
+<div>
+
+<b>
+EXPERIMENTING
+</b>
+
+<small>
+Ideas
+</small>
+
+</div>
+
+
+<i>
+→
+</i>
+
+
+<div>
+
+<b>
+BUILDING
+</b>
+
+<small>
+Solutions
+</small>
+
+</div>
+
+
+<i>
+→
+</i>
+
+
+<div class="highlight">
+
+<b>
+REAL IMPACT
+</b>
+
+<small>
+Business value
+</small>
+
+</div>
+
+</div>
+
+
+<p class="lead light-text">
+
+Some employees took what they learned
+and started creating their own AI solutions.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- SLIDE 10 -->
+<!-- ========================= -->
+
+<section class="slide light">
+
+<div class="content employee-layout">
+
+<div class="employee-copy">
+
+<p class="eyebrow">
+
+10 · EMPLOYEE SUCCESS STORY
+
+</p>
+
+
+<h2>
+
+From learning
+<br>
+
+to
+<span>
+building.
+</span>
+
+</h2>
+
+
+<p class="story-intro">
+
+Meet
+
+</p>
+
+
+<h3>
+Nadi Khlaif
+</h3>
+
+
+<p class="role">
+
+HR Senior Specialist
+
+</p>
+
+
+<div class="agent-badge">
+
+<strong>
+HR Agent
+</strong>
+
+<span>
+Built from an HR need
+</span>
+
+</div>
+
+
+<p class="lead">
+
+Nadi created an HR Agent designed
+to simplify a common HR request
+and make the process easier and faster.
+
+</p>
+
+</div>
+
+
+
+<div class="employee-photo">
+
+<img
+src="assets/nadi-khlaif.jpg"
+alt="Nadi Khlaif">
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- SLIDE 11 -->
+<!-- ========================= -->
+
+<section class="slide light">
+
+<div class="content">
+
+<p class="eyebrow">
+
+11 · THE HR AGENT
+
+</p>
+
+
+<h2>
+
+A simple prompt.
+<br>
+
+<span>
+A useful result.
+</span>
+
+</h2>
+
+
+<p class="lead">
+
+The HR Agent can create official
+employee letters for
+<b>
+banks and embassies.
+</b>
+
+</p>
+
+
+<div class="agent-demo">
+
+
+<div>
+
+<span class="demo-label">
+
+EMPLOYEE INPUT
+
+</span>
+
+
+<div class="input-card">
+
+<small>
+EMPLOYEE NUMBER
+</small>
+
+<strong>
+12345
+</strong>
+
+</div>
+
+
+<div class="input-card">
+
+<small>
+DESTINATION
+</small>
+
+<strong>
+Bank
+</strong>
+
+</div>
+
+
+<div class="prompt">
+
+<small>
+PROMPT
+</small>
+
+“Generate a bank letter
+for employee 12345.”
+
+</div>
+
+</div>
+
+
+
+<div class="arrow-large">
+
+→
+
+</div>
+
+
+
+<div>
+
+<span class="demo-label">
+
+HR AGENT
+
+</span>
+
+
+<div class="document">
+
+<div class="doc-head">
+
+FINE HYGIENIC HOLDING
+
+</div>
+
+
+<div class="doc-line wide"></div>
+
+<div class="doc-line"></div>
+
+<div class="doc-line"></div>
+
+
+<div class="doc-title">
+
+OFFICIAL EMPLOYEE LETTER
+
+</div>
+
+
+<div class="doc-line"></div>
+
+<div class="doc-line"></div>
+
+<div class="doc-line wide"></div>
+
+
+<div class="stamp">
+
+READY
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<p class="fine-print">
+
+Example flow based on the HR Agent
+description supplied for this presentation.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- SLIDE 12 -->
+<!-- ========================= -->
+
+<section class="slide dark">
+
+<div class="content center">
+
+<div class="closing-orb">
+AI
+</div>
+
+
+<p class="eyebrow cyan">
+
+12 · WHAT'S NEXT?
+
+</p>
+
+
+<h2>
+
+The journey
+<br>
+
+<span>
+continues.
+</span>
+
+</h2>
+
+
+<p class="lead light-text">
+
+Our Learning Bites created awareness,
+knowledge and curiosity.
+
+Now the opportunity is to keep moving
+from learning to application and innovation.
+
+</p>
+
+
+<div class="next-steps">
+
+<span>
+LEARN MORE
+</span>
+
+<span>
+EXPERIMENT MORE
+</span>
+
+<span>
+BUILD MORE
+</span>
+
+<span>
+SHARE MORE
+</span>
+
+</div>
+
+
+<div class="closing-line">
+
+Turn AI knowledge into
+<b>
+real impact.
+</b>
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- CONTROLS -->
+
+<div class="controls">
+
+<button id="prev">
+←
+</button>
+
+<span>
+
+<b id="counter">
+01
+</b>
+
+/ 12
+
+</span>
+
+<button id="next">
+→
+</button>
+
+</div>
+
+
+<div class="progress">
+
+<span id="progress">
+</span>
+
+</div>
+
+
+
+<!-- MENU -->
+
+<div
+class="menu-overlay"
+id="menuOverlay">
+
+<div class="menu-panel">
+
+<button
+class="menu-close"
+id="menuClose">
+
+×
+
+</button>
+
+
+<p class="eyebrow">
+
+NAVIGATION
+
+</p>
+
+
+<h2>
+
+AI Learning
+<br>
+
+<span>
+Bites
+</span>
+
+</h2>
+
+
+<div
+class="menu-list"
+id="menuList">
+
+</div>
+
+
+<p class="keyboard">
+
+Keyboard:
+← → to navigate
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- MODAL -->
+
+<div
+class="modal"
+id="modal">
+
+<div class="modal-bg"></div>
+
+
+<div class="modal-card">
+
+<button
+id="modalClose">
+
+×
+
+</button>
+
+
+<img
+id="modalImage">
+
+
+<div class="modal-info">
+
+<p
+class="eyebrow"
+id="modalMonth">
+</p>
+
+
+<h2
+id="modalTitle">
+</h2>
+
+
+<p
+class="speaker"
+id="modalSpeaker">
+</p>
+
+
+<p
+class="modal-copy"
+id="modalCopy">
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<script src="script.js"></script>
 
 </body>
 
