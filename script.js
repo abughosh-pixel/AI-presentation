@@ -1,12 +1,13 @@
-/* =========================================
-   FINE AI LEARNING BITES
+/* =========================================================
+   FINE HYGIENIC HOLDING
+   AI LEARNING JOURNEY 2026
    INTERACTIVE PRESENTATION
-========================================= */
+========================================================= */
 
 
-/* -----------------------------------------
-   SLIDES
------------------------------------------ */
+/* =========================================================
+   1. PRESENTATION SETUP
+========================================================= */
 
 const slides = Array.from(
     document.querySelectorAll(".slide")
@@ -14,109 +15,212 @@ const slides = Array.from(
 
 let currentSlide = 0;
 
+const currentNumber =
+    document.getElementById("currentNumber");
 
-/* -----------------------------------------
-   SESSION DATA
------------------------------------------ */
+const totalNumber =
+    document.getElementById("totalNumber");
 
-const sessions = [
+const progressBar =
+    document.getElementById("progressBar");
 
-    {
+const slideName =
+    document.getElementById("slideName");
+
+const previousButton =
+    document.getElementById("previousSlide");
+
+const nextButton =
+    document.getElementById("nextSlide");
+
+
+if (totalNumber) {
+    totalNumber.textContent =
+        String(slides.length).padStart(2, "0");
+}
+
+
+/* =========================================================
+   2. SESSION DATA
+========================================================= */
+
+const sessions = {
+
+    "ai-excel": {
         month: "JANUARY",
         title: "AI in Excel",
         speaker: "Ala' Dalghan",
-        image: "assets/ai-excel-january.jpg",
+        poster: "assets/ai-excel-january.jpg",
+
         description:
-            "An introduction to using AI capabilities in Excel to work smarter, analyze information faster and gain useful insights."
+            "One of the first Learning Bites in our AI journey, exploring how AI can support smarter work, faster analysis and better decision-making in Excel.",
+
+        tags: [
+            "Excel",
+            "Productivity",
+            "AI"
+        ]
     },
 
-    {
+
+    "copilot-intro": {
         month: "JANUARY",
         title: "Introduction to Copilot",
-        speaker: "Raghad Hemeimat — Microsoft",
-        image: "assets/introduction-to-copilot-january.jpg",
+        speaker: "Raghad Hemeimat · Microsoft",
+        poster: "assets/introduction-to-copilot-january.png",
+
         description:
-            "An introduction to Microsoft Copilot and how employees can use AI to support everyday work."
+            "An introduction to Microsoft Copilot and how AI can become part of everyday work through practical examples and demonstrations.",
+
+        tags: [
+            "Microsoft Copilot",
+            "Everyday AI",
+            "Productivity"
+        ]
     },
 
-    {
+
+    "copilot-excel": {
         month: "MARCH",
         title: "Copilot in Excel",
-        speaker: "Raghad Hemeimat — Microsoft",
-        image: "assets/copilot-excel-march.png",
+        speaker: "Raghad Hemeimat · Microsoft",
+        poster: null,
+
         description:
-            "A practical look at using Copilot in Excel to analyze data, work with information and improve productivity."
+            "A practical Learning Bite focused on using Copilot within Excel and exploring how AI can support everyday data-related work.",
+
+        tags: [
+            "Copilot",
+            "Excel",
+            "Microsoft"
+        ]
     },
 
-    {
+
+    "ai-powerpoint": {
         month: "APRIL",
         title: "AI in PowerPoint",
         speaker: "Ala' Dalghan",
-        image: "assets/ai-powerpoint-april.png",
+        poster: "assets/ai-powerpoint-april.png",
+
         description:
-            "Exploring how AI can help create cleaner, sharper presentations and accelerate the presentation-building process."
+            "Exploring how AI can support the creation of cleaner, sharper and more effective presentations in less time.",
+
+        tags: [
+            "PowerPoint",
+            "Presentations",
+            "Productivity"
+        ]
     },
 
-    {
+
+    "ai-leadership": {
         month: "MAY",
         title: "AI in Leadership",
         speaker: "Ala' Dalghan",
-        image: "assets/ai-leadership.jpg",
+        poster: "assets/ai-leadership.jpg",
+
         description:
-            "Exploring how leaders can use AI strategically to make faster decisions, identify opportunities and lead with sharper insights."
+            "Exploring how leaders can use AI strategically to support faster decisions, identify opportunities and work with sharper insights.",
+
+        tags: [
+            "Leadership",
+            "Decision-Making",
+            "Strategy"
+        ]
     },
 
-    {
+
+    "bricks": {
         month: "MAY",
         title: "BRICKS AI",
         speaker: "Riverdale Institute",
-        image: "assets/bricks-ai-may.jpg",
+        poster: "assets/bricks-ai-may.jpg",
+
         description:
-            "A Finance-focused Learning Bite exploring BRICKS AI and the use of AI for financial analysis."
+            "A Finance Learning Bite exploring BRICKS AI and the possibilities of AI-supported financial analysis.",
+
+        tags: [
+            "Finance",
+            "Financial Analysis",
+            "BRICKS AI"
+        ]
     },
 
-    {
+
+    "legal": {
         month: "JUNE",
         title: "AI in Legal & Compliance",
         speaker: "Dr. Ramy Al Damati",
-        image: "assets/ai-legal-compliance-june.jpg",
+        poster: "assets/ai-legal-compliance-june.jpg",
+
         description:
-            "Practical applications of AI for smarter legal and compliance operations."
+            "Exploring practical AI applications that can support smarter legal and compliance operations.",
+
+        tags: [
+            "Legal",
+            "Compliance",
+            "Business AI"
+        ]
     },
 
-    {
+
+    "agent-one": {
         month: "JUNE",
         title: "AI Agent 1",
-        speaker: "Raghad Hemeimat — Microsoft",
-        image: "assets/introduction-to-copilot-january.jpg",
+        speaker: "Raghad Hemeimat · Microsoft",
+        poster: null,
+
         description:
-            "The first step into understanding AI Agents and how AI can move beyond simple questions and answers."
+            "The beginning of our AI Agent learning series — moving the conversation from simply using AI toward understanding how AI-powered agents can support specific tasks.",
+
+        tags: [
+            "AI Agents",
+            "Microsoft",
+            "Automation"
+        ]
     },
 
-    {
+
+    "agent-two": {
         month: "JUNE",
         title: "AI Agent 2",
-        speaker: "Raghad Hemeimat — Microsoft",
-        image: "assets/copilot-excel-march.png",
+        speaker: "Raghad Hemeimat · Microsoft",
+        poster: null,
+
         description:
-            "Building on the AI Agent concept and exploring how AI can support specific business tasks."
+            "Building further on the AI Agent concept and exploring how agents can be designed around practical business needs.",
+
+        tags: [
+            "AI Agents",
+            "Business Solutions",
+            "Automation"
+        ]
     },
 
-    {
+
+    "agent-three": {
         month: "JULY",
         title: "AI Agent 3",
-        speaker: "Raghad Hemeimat — Microsoft",
-        image: "assets/copilot-excel-march.png",
+        speaker: "Raghad Hemeimat · Microsoft",
+        poster: null,
+
         description:
-            "Continuing the journey toward creating practical AI-powered solutions."
+            "Continuing the AI Agent journey and encouraging employees to think about how AI-powered solutions can be applied to real work challenges.",
+
+        tags: [
+            "AI Agents",
+            "Innovation",
+            "Building with AI"
+        ]
     }
 
-];
+};
 
 
-/* -----------------------------------------
-   UPDATE SLIDE
------------------------------------------ */
+/* =========================================================
+   3. SLIDE NAVIGATION
+========================================================= */
 
 function showSlide(index) {
 
@@ -128,108 +232,114 @@ function showSlide(index) {
         index = 0;
     }
 
+
+    slides.forEach(
+        (slide, slideIndex) => {
+
+            slide.classList.toggle(
+                "active",
+                slideIndex === index
+            );
+
+        }
+    );
+
+
     currentSlide = index;
 
 
-    slides.forEach((slide, i) => {
+    /* Slide number */
 
-        slide.classList.toggle(
-            "active",
-            i === currentSlide
+    if (currentNumber) {
+
+        currentNumber.textContent =
+            String(index + 1).padStart(2, "0");
+
+    }
+
+
+    /* Progress bar */
+
+    if (progressBar) {
+
+        const progress =
+            ((index + 1) / slides.length) * 100;
+
+        progressBar.style.width =
+            `${progress}%`;
+
+    }
+
+
+    /* Slide title */
+
+    if (slideName) {
+
+        slideName.textContent =
+            slides[index].dataset.title ||
+            `Slide ${index + 1}`;
+
+    }
+
+
+    /* Update overview menu */
+
+    document
+        .querySelectorAll(
+            ".overview-list button"
+        )
+        .forEach(
+            (button, buttonIndex) => {
+
+                button.classList.toggle(
+                    "active",
+                    buttonIndex === index
+                );
+
+            }
         );
 
-    });
 
+    /* Reset reveal animation */
 
-    /* Counter */
+    const reveals =
+        slides[index]
+            .querySelectorAll(".reveal");
 
-    const counter =
-        document.getElementById("counter");
+    reveals.forEach(
+        element => {
 
-    if (counter) {
+            element.style.animation = "none";
 
-        counter.textContent =
-            String(currentSlide + 1)
-                .padStart(2, "0");
+            void element.offsetHeight;
 
-    }
+            element.style.animation = "";
 
-
-    /* Progress */
-
-    const progress =
-        document.getElementById("progress");
-
-    if (progress) {
-
-        const percentage =
-            ((currentSlide + 1) /
-            slides.length) * 100;
-
-        progress.style.width =
-            percentage + "%";
-
-    }
-
-
-    /* Rail */
-
-    document
-        .querySelectorAll(".rail-dot")
-        .forEach((button, i) => {
-
-            button.classList.toggle(
-                "active",
-                i === currentSlide
-            );
-
-        });
-
-
-    /* Menu */
-
-    document
-        .querySelectorAll(".menu-list button")
-        .forEach((button, i) => {
-
-            button.classList.toggle(
-                "active",
-                i === currentSlide
-            );
-
-        });
+        }
+    );
 
 }
 
 
-/* -----------------------------------------
-   NEXT / PREVIOUS
------------------------------------------ */
-
 function nextSlide() {
 
-    showSlide(currentSlide + 1);
+    showSlide(
+        currentSlide + 1
+    );
 
 }
 
 
 function previousSlide() {
 
-    showSlide(currentSlide - 1);
+    showSlide(
+        currentSlide - 1
+    );
 
 }
 
 
-/* -----------------------------------------
-   ARROW BUTTONS
------------------------------------------ */
-
-const nextButton =
-    document.getElementById("next");
-
-const previousButton =
-    document.getElementById("prev");
-
+/* Bottom arrows */
 
 if (nextButton) {
 
@@ -251,45 +361,7 @@ if (previousButton) {
 }
 
 
-/* -----------------------------------------
-   KEYBOARD NAVIGATION
------------------------------------------ */
-
-document.addEventListener(
-    "keydown",
-    function(event) {
-
-        if (
-            event.key === "ArrowRight" ||
-            event.key === " "
-        ) {
-
-            nextSlide();
-
-        }
-
-
-        if (event.key === "ArrowLeft") {
-
-            previousSlide();
-
-        }
-
-
-        if (event.key === "Escape") {
-
-            closeMenu();
-            closeModal();
-
-        }
-
-    }
-);
-
-
-/* -----------------------------------------
-   ENTER JOURNEY BUTTON
------------------------------------------ */
+/* Buttons with data-next */
 
 document
     .querySelectorAll("[data-next]")
@@ -303,24 +375,24 @@ document
     });
 
 
-/* -----------------------------------------
-   SIDE NAVIGATION
------------------------------------------ */
+/* Buttons with data-go */
 
 document
-    .querySelectorAll(".rail-dot")
+    .querySelectorAll("[data-go]")
     .forEach(button => {
 
         button.addEventListener(
             "click",
-            function() {
+            event => {
 
-                const index =
+                event.preventDefault();
+
+                const target =
                     Number(
-                        this.dataset.slide
+                        button.dataset.go
                     );
 
-                showSlide(index);
+                showSlide(target);
 
             }
         );
@@ -328,272 +400,194 @@ document
     });
 
 
-/* -----------------------------------------
-   BUILD SESSION GRID
------------------------------------------ */
+/* =========================================================
+   4. KEYBOARD NAVIGATION
+========================================================= */
 
-const sessionGrid =
-    document.getElementById("sessionGrid");
+document.addEventListener(
+    "keydown",
+    event => {
 
+        const activeElement =
+            document.activeElement;
 
-if (sessionGrid) {
-
-    sessions.forEach(
-        (session, index) => {
-
-            const card =
-                document.createElement("button");
-
-            card.className =
-                "session-card";
-
-            card.dataset.session =
-                index;
-
-
-            card.innerHTML = `
-
-                <img
-                    src="${session.image}"
-                    alt="${session.title}"
-                >
-
-                <div class="session-body">
-
-                    <small>
-                        ${session.month}
-                    </small>
-
-                    <h3>
-                        ${session.title}
-                    </h3>
-
-                    <p>
-                        ${session.speaker}
-                    </p>
-
-                </div>
-
-            `;
-
-
-            card.addEventListener(
-                "click",
-                function() {
-
-                    openModal(index);
-
-                }
+        const isTyping =
+            activeElement &&
+            (
+                activeElement.tagName === "INPUT" ||
+                activeElement.tagName === "TEXTAREA" ||
+                activeElement.tagName === "SELECT"
             );
 
 
-            sessionGrid.appendChild(card);
+        if (isTyping) {
 
-        }
-    );
+            if (event.key === "Escape") {
 
-}
-
-
-/* -----------------------------------------
-   FEATURE POSTER BUTTONS
------------------------------------------ */
-
-document
-    .querySelectorAll(".feature-poster")
-    .forEach(button => {
-
-        button.addEventListener(
-            "click",
-            function() {
-
-                const index =
-                    Number(
-                        this.dataset.session
-                    );
-
-                openModal(index);
-
-            }
-        );
-
-    });
-
-
-/* -----------------------------------------
-   MODAL
------------------------------------------ */
-
-const modal =
-    document.getElementById("modal");
-
-const modalImage =
-    document.getElementById("modalImage");
-
-const modalMonth =
-    document.getElementById("modalMonth");
-
-const modalTitle =
-    document.getElementById("modalTitle");
-
-const modalSpeaker =
-    document.getElementById("modalSpeaker");
-
-const modalCopy =
-    document.getElementById("modalCopy");
-
-
-function openModal(index) {
-
-    const session =
-        sessions[index];
-
-    if (!session || !modal) {
-        return;
-    }
-
-
-    modalImage.src =
-        session.image;
-
-    modalImage.alt =
-        session.title;
-
-    modalMonth.textContent =
-        session.month;
-
-    modalTitle.textContent =
-        session.title;
-
-    modalSpeaker.textContent =
-        session.speaker;
-
-    modalCopy.textContent =
-        session.description;
-
-
-    modal.classList.add("open");
-
-}
-
-
-function closeModal() {
-
-    if (!modal) {
-        return;
-    }
-
-    modal.classList.remove("open");
-
-}
-
-
-/* -----------------------------------------
-   MODAL CLOSE
------------------------------------------ */
-
-const modalClose =
-    document.getElementById("modalClose");
-
-
-if (modalClose) {
-
-    modalClose.addEventListener(
-        "click",
-        closeModal
-    );
-
-}
-
-
-/* Click outside modal */
-
-if (modal) {
-
-    modal.addEventListener(
-        "click",
-        function(event) {
-
-            if (
-                event.target === modal ||
-                event.target.classList.contains(
-                    "modal-bg"
-                )
-            ) {
-
-                closeModal();
+                activeElement.blur();
 
             }
 
+            return;
+
         }
-    );
-
-}
 
 
-/* -----------------------------------------
-   MENU
------------------------------------------ */
+        if (
+            event.key === "ArrowRight" ||
+            event.key === "PageDown"
+        ) {
 
-const menuOverlay =
-    document.getElementById(
-        "menuOverlay"
-    );
+            event.preventDefault();
 
-const menuList =
-    document.getElementById(
-        "menuList"
-    );
+            nextSlide();
 
-const overviewButton =
-    document.getElementById(
-        "overviewBtn"
-    );
-
-const menuClose =
-    document.getElementById(
-        "menuClose"
-    );
+        }
 
 
-const menuTitles = [
+        if (
+            event.key === "ArrowLeft" ||
+            event.key === "PageUp"
+        ) {
 
-    "Welcome",
+            event.preventDefault();
 
-    "Why AI Matters",
+            previousSlide();
 
-    "Learning First",
-
-    "Our AI Journey",
-
-    "The Learning Bites",
-
-    "Everyday Productivity",
-
-    "Broader AI Applications",
-
-    "AI Agents",
-
-    "From Learning to Action",
-
-    "Employee Success Story",
-
-    "The HR Agent",
-
-    "What's Next?"
-
-];
+        }
 
 
-function buildMenu() {
+        if (event.key === "Home") {
 
-    if (!menuList) {
+            showSlide(0);
+
+        }
+
+
+        if (event.key === "End") {
+
+            showSlide(
+                slides.length - 1
+            );
+
+        }
+
+
+        if (event.key === "Escape") {
+
+            closeOverview();
+
+            closeSessionModal();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   5. TOUCH / SWIPE NAVIGATION
+========================================================= */
+
+let touchStartX = 0;
+
+let touchEndX = 0;
+
+
+document.addEventListener(
+    "touchstart",
+    event => {
+
+        touchStartX =
+            event.changedTouches[0]
+                .screenX;
+
+    },
+    {
+        passive: true
+    }
+);
+
+
+document.addEventListener(
+    "touchend",
+    event => {
+
+        touchEndX =
+            event.changedTouches[0]
+                .screenX;
+
+        handleSwipe();
+
+    },
+    {
+        passive: true
+    }
+);
+
+
+function handleSwipe() {
+
+    const difference =
+        touchStartX -
+        touchEndX;
+
+
+    if (
+        Math.abs(difference) < 60
+    ) {
         return;
     }
 
 
-    menuTitles.forEach(
-        (title, index) => {
+    if (difference > 0) {
+
+        nextSlide();
+
+    } else {
+
+        previousSlide();
+
+    }
+
+}
+
+
+/* =========================================================
+   6. OVERVIEW MENU
+========================================================= */
+
+const overview =
+    document.getElementById("overview");
+
+const overviewList =
+    document.getElementById(
+        "overviewList"
+    );
+
+const menuButton =
+    document.getElementById(
+        "menuButton"
+    );
+
+const closeOverviewButton =
+    document.getElementById(
+        "closeOverview"
+    );
+
+
+function buildOverview() {
+
+    if (!overviewList) {
+        return;
+    }
+
+
+    overviewList.innerHTML = "";
+
+
+    slides.forEach(
+        (slide, index) => {
 
             const button =
                 document.createElement(
@@ -601,33 +595,35 @@ function buildMenu() {
                 );
 
 
+            const number =
+                String(index + 1)
+                    .padStart(2, "0");
+
+
+            const title =
+                slide.dataset.title ||
+                `Slide ${index + 1}`;
+
+
             button.innerHTML = `
-
-                <b>
-                    ${String(index + 1)
-                        .padStart(2, "0")}
-                </b>
-
-                <span>
-                    ${title}
-                </span>
-
+                <span>${number}</span>
+                <strong>${title}</strong>
             `;
 
 
             button.addEventListener(
                 "click",
-                function() {
+                () => {
 
                     showSlide(index);
 
-                    closeMenu();
+                    closeOverview();
 
                 }
             );
 
 
-            menuList.appendChild(
+            overviewList.appendChild(
                 button
             );
 
@@ -637,64 +633,712 @@ function buildMenu() {
 }
 
 
-function openMenu() {
+function openOverview() {
 
-    if (!menuOverlay) {
+    if (!overview) {
         return;
     }
 
-    menuOverlay.classList.add(
+    overview.classList.add("open");
+
+}
+
+
+function closeOverview() {
+
+    if (!overview) {
+        return;
+    }
+
+    overview.classList.remove("open");
+
+}
+
+
+if (menuButton) {
+
+    menuButton.addEventListener(
+        "click",
+        openOverview
+    );
+
+}
+
+
+if (closeOverviewButton) {
+
+    closeOverviewButton.addEventListener(
+        "click",
+        closeOverview
+    );
+
+}
+
+
+if (overview) {
+
+    const overviewBackground =
+        overview.querySelector(
+            ".overview-background"
+        );
+
+
+    if (overviewBackground) {
+
+        overviewBackground.addEventListener(
+            "click",
+            closeOverview
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   7. INTERACTIVE TIMELINE
+========================================================= */
+
+const timelineData = {
+
+    JAN: {
+        month: "JANUARY",
+        title:
+            "Starting the AI conversation",
+
+        text:
+            "The journey began with AI in Excel and an introduction to Microsoft Copilot — making AI practical and accessible in everyday work.",
+
+        progress: "0%"
+    },
+
+
+    MAR: {
+        month: "MARCH",
+        title:
+            "Bringing Copilot into Excel",
+
+        text:
+            "The journey continued with a dedicated Copilot in Excel session, exploring AI directly inside a familiar productivity tool.",
+
+        progress: "20%"
+    },
+
+
+    APR: {
+        month: "APRIL",
+        title:
+            "Creating with AI",
+
+        text:
+            "AI in PowerPoint introduced another practical use case: using AI to support faster and more effective presentation creation.",
+
+        progress: "40%"
+    },
+
+
+    MAY: {
+        month: "MAY",
+        title:
+            "Expanding into business applications",
+
+        text:
+            "The learning journey expanded beyond productivity into leadership and financial analysis through AI in Leadership and BRICKS AI.",
+
+        progress: "60%"
+    },
+
+
+    JUN: {
+        month: "JUNE",
+        title:
+            "From tools to AI Agents",
+
+        text:
+            "June brought AI into Legal & Compliance and introduced the first stages of the AI Agent learning series.",
+
+        progress: "80%"
+    },
+
+
+    JUL: {
+        month: "JULY",
+        title:
+            "Learning to build with AI",
+
+        text:
+            "By July, the learning journey had progressed toward building and experimenting with AI Agents around real business needs.",
+
+        progress: "100%"
+    }
+
+};
+
+
+const timelineStops =
+    document.querySelectorAll(
+        ".journey-stop"
+    );
+
+const timelineMonth =
+    document.getElementById(
+        "timelineMonth"
+    );
+
+const timelineTitle =
+    document.getElementById(
+        "timelineTitle"
+    );
+
+const timelineText =
+    document.getElementById(
+        "timelineText"
+    );
+
+const journeyProgress =
+    document.querySelector(
+        ".journey-progress"
+    );
+
+
+timelineStops.forEach(
+    stop => {
+
+        stop.addEventListener(
+            "click",
+            () => {
+
+                const key =
+                    stop.dataset.month;
+
+                const data =
+                    timelineData[key];
+
+
+                if (!data) {
+                    return;
+                }
+
+
+                timelineStops.forEach(
+                    item => {
+
+                        item.classList.remove(
+                            "active"
+                        );
+
+                    }
+                );
+
+
+                stop.classList.add(
+                    "active"
+                );
+
+
+                if (timelineMonth) {
+
+                    timelineMonth.textContent =
+                        data.month;
+
+                }
+
+
+                if (timelineTitle) {
+
+                    timelineTitle.textContent =
+                        data.title;
+
+                }
+
+
+                if (timelineText) {
+
+                    timelineText.textContent =
+                        data.text;
+
+                }
+
+
+                if (journeyProgress) {
+
+                    journeyProgress.style.width =
+                        data.progress;
+
+                }
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================================================
+   8. SESSION MODAL
+========================================================= */
+
+const sessionModal =
+    document.getElementById(
+        "sessionModal"
+    );
+
+const modalClose =
+    document.getElementById(
+        "modalClose"
+    );
+
+const modalPoster =
+    document.getElementById(
+        "modalPoster"
+    );
+
+const posterPlaceholder =
+    document.getElementById(
+        "posterPlaceholder"
+    );
+
+const modalMonth =
+    document.getElementById(
+        "modalMonth"
+    );
+
+const modalTitle =
+    document.getElementById(
+        "modalTitle"
+    );
+
+const modalSpeaker =
+    document.getElementById(
+        "modalSpeaker"
+    );
+
+const modalDescription =
+    document.getElementById(
+        "modalDescription"
+    );
+
+const modalTags =
+    document.getElementById(
+        "modalTags"
+    );
+
+
+function openSessionModal(
+    sessionKey
+) {
+
+    const session =
+        sessions[sessionKey];
+
+
+    if (
+        !session ||
+        !sessionModal
+    ) {
+        return;
+    }
+
+
+    if (modalMonth) {
+
+        modalMonth.textContent =
+            session.month;
+
+    }
+
+
+    if (modalTitle) {
+
+        modalTitle.textContent =
+            session.title;
+
+    }
+
+
+    if (modalSpeaker) {
+
+        modalSpeaker.textContent =
+            session.speaker;
+
+    }
+
+
+    if (modalDescription) {
+
+        modalDescription.textContent =
+            session.description;
+
+    }
+
+
+    /* Poster */
+
+    if (
+        session.poster &&
+        modalPoster
+    ) {
+
+        modalPoster.src =
+            session.poster;
+
+        modalPoster.alt =
+            session.title;
+
+        modalPoster.style.display =
+            "block";
+
+
+        if (posterPlaceholder) {
+
+            posterPlaceholder.style.display =
+                "none";
+
+        }
+
+    } else {
+
+        if (modalPoster) {
+
+            modalPoster.removeAttribute(
+                "src"
+            );
+
+            modalPoster.style.display =
+                "none";
+
+        }
+
+
+        if (posterPlaceholder) {
+
+            posterPlaceholder.style.display =
+                "flex";
+
+        }
+
+    }
+
+
+    /* Tags */
+
+    if (modalTags) {
+
+        modalTags.innerHTML = "";
+
+
+        session.tags.forEach(
+            tag => {
+
+                const tagElement =
+                    document.createElement(
+                        "span"
+                    );
+
+                tagElement.textContent =
+                    tag;
+
+                modalTags.appendChild(
+                    tagElement
+                );
+
+            }
+        );
+
+    }
+
+
+    sessionModal.classList.add(
         "open"
     );
 
 }
 
 
-function closeMenu() {
+function closeSessionModal() {
 
-    if (!menuOverlay) {
+    if (!sessionModal) {
         return;
     }
 
-    menuOverlay.classList.remove(
+    sessionModal.classList.remove(
         "open"
     );
 
 }
 
 
-if (overviewButton) {
+document
+    .querySelectorAll(
+        "[data-session]"
+    )
+    .forEach(button => {
 
-    overviewButton.addEventListener(
+        button.addEventListener(
+            "click",
+            () => {
+
+                openSessionModal(
+                    button.dataset.session
+                );
+
+            }
+        );
+
+    });
+
+
+if (modalClose) {
+
+    modalClose.addEventListener(
         "click",
-        openMenu
+        closeSessionModal
     );
 
 }
 
 
-if (menuClose) {
+document
+    .querySelectorAll(
+        "[data-close-modal]"
+    )
+    .forEach(element => {
 
-    menuClose.addEventListener(
-        "click",
-        closeMenu
+        element.addEventListener(
+            "click",
+            closeSessionModal
+        );
+
+    });
+
+
+/* =========================================================
+   9. HR AGENT INTERACTIVE DEMO
+========================================================= */
+
+const employeeNumber =
+    document.getElementById(
+        "employeeNumber"
+    );
+
+const letterParty =
+    document.getElementById(
+        "letterParty"
+    );
+
+const agentPrompt =
+    document.getElementById(
+        "agentPrompt"
+    );
+
+const generateLetter =
+    document.getElementById(
+        "generateLetter"
+    );
+
+const demoChat =
+    document.getElementById(
+        "demoChat"
+    );
+
+
+function addUserMessage(
+    message
+) {
+
+    if (!demoChat) {
+        return;
+    }
+
+
+    const wrapper =
+        document.createElement(
+            "div"
+        );
+
+    wrapper.className =
+        "user-message";
+
+
+    const paragraph =
+        document.createElement(
+            "p"
+        );
+
+    paragraph.textContent =
+        message;
+
+
+    wrapper.appendChild(
+        paragraph
+    );
+
+
+    demoChat.appendChild(
+        wrapper
     );
 
 }
 
 
-if (menuOverlay) {
+function addAgentMessage(
+    message
+) {
 
-    menuOverlay.addEventListener(
+    if (!demoChat) {
+        return;
+    }
+
+
+    const wrapper =
+        document.createElement(
+            "div"
+        );
+
+    wrapper.className =
+        "agent-message";
+
+
+    wrapper.innerHTML = `
+        <div class="message-avatar">
+            AI
+        </div>
+
+        <div>
+            <strong>HR Agent</strong>
+
+            <p></p>
+        </div>
+    `;
+
+
+    const paragraph =
+        wrapper.querySelector("p");
+
+    paragraph.textContent =
+        message;
+
+
+    demoChat.appendChild(
+        wrapper
+    );
+
+}
+
+
+function generateDemoLetter() {
+
+    const employee =
+        employeeNumber
+            ? employeeNumber.value.trim()
+            : "";
+
+    const party =
+        letterParty
+            ? letterParty.value
+            : "Bank";
+
+    const prompt =
+        agentPrompt
+            ? agentPrompt.value.trim()
+            : "";
+
+
+    if (!employee) {
+
+        if (employeeNumber) {
+
+            employeeNumber.focus();
+
+        }
+
+        return;
+
+    }
+
+
+    const requestText =
+        prompt ||
+        `Prepare an official letter for ${party}.`;
+
+
+    addUserMessage(
+        `Employee ${employee}: ${requestText}`
+    );
+
+
+    if (generateLetter) {
+
+        generateLetter.disabled =
+            true;
+
+        generateLetter.innerHTML = `
+            <span>Generating...</span>
+            <b>✦</b>
+        `;
+
+    }
+
+
+    setTimeout(
+        () => {
+
+            addAgentMessage(
+                `Demo complete. An official ${party.toLowerCase()} letter for employee ${employee} has been prepared and is ready for review.`
+            );
+
+
+            if (generateLetter) {
+
+                generateLetter.disabled =
+                    false;
+
+                generateLetter.innerHTML = `
+                    <span>Generate Letter</span>
+                    <b>✦</b>
+                `;
+
+            }
+
+
+            demoChat.scrollTo({
+                top:
+                    demoChat.scrollHeight,
+
+                behavior:
+                    "smooth"
+            });
+
+        },
+        900
+    );
+
+}
+
+
+if (generateLetter) {
+
+    generateLetter.addEventListener(
         "click",
-        function(event) {
+        generateDemoLetter
+    );
+
+}
+
+
+if (agentPrompt) {
+
+    agentPrompt.addEventListener(
+        "keydown",
+        event => {
 
             if (
-                event.target ===
-                menuOverlay
+                event.key === "Enter"
             ) {
 
-                closeMenu();
+                event.preventDefault();
+
+                generateDemoLetter();
 
             }
 
@@ -704,10 +1348,10 @@ if (menuOverlay) {
 }
 
 
-/* -----------------------------------------
-   INITIALIZE
------------------------------------------ */
+/* =========================================================
+   10. INITIALIZE
+========================================================= */
 
-buildMenu();
+buildOverview();
 
 showSlide(0);
